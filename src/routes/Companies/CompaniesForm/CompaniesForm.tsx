@@ -76,7 +76,13 @@ const CompaniesForm: React.FC = () => {
               control={control}
               defaultValue=""
               render={({ field }) => (
-                <InputText id="cnpj" label="CNPJ" errorText={formState.errors?.cnpj?.message} {...field} />
+                <InputText
+                  id="cnpj"
+                  label="CNPJ"
+                  errorText={formState.errors?.cnpj?.message}
+                  mask="99.999.999/9999-99"
+                  {...field}
+                />
               )}
             />
           </Grid>
@@ -90,6 +96,7 @@ const CompaniesForm: React.FC = () => {
                   id="telephone"
                   label="Telefone"
                   errorText={formState.errors?.telephone?.message}
+                  mask="(99) 999999999"
                   {...field}
                 />
               )}
